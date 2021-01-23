@@ -1,10 +1,32 @@
 .table {
+  padding-top: 20px;
+  width: 1000px;
   margin: 0 auto;
-  padding: 10px;
-  border-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-tr {
+.table-head {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.table-head,
+.table-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cell-head,
+.cell-body {
+  width: 100px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.cell {
   border: 1px solid black;
-  padding: 5px;
+  margin: 2px;
 }
