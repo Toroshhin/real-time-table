@@ -5,10 +5,9 @@ export default function editTableReducer(state = initialState, action) {
   switch (action.type) {
     case 'EDIT_QUANTITY':
       if (!Number(action.payload.quantity)) {
-        alert('Вы ввели не верное значение')
         return state
       }
-      newState = state.map((row) => {
+      newState = state.map(row => {
         if (row.id === action.payload.id) {
           row.quantity = Math.abs(Number(action.payload.quantity))
         }
@@ -17,8 +16,7 @@ export default function editTableReducer(state = initialState, action) {
       return newState
 
     case 'EDIT_PRICE':
-
-      newState = state.map((row) => {
+      newState = state.map(row => {
         if (row.id === action.payload.id) {
           row.priceForOne = Math.abs(Number(action.payload.price))
         }
