@@ -1,0 +1,17 @@
+.table-row {
+  display: flex;
+  margin: 0 auto;
+  border-top: 0;
+  border-bottom: 1px solid black;
+  border-left: 0;
+  border-right: 0;
+  width: 460px;
+}
+
+.table-col {
+  padding: 5px;
+  width: 140px;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-align: center;
+}

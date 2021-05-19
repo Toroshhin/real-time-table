@@ -1,0 +1,14 @@
+.table-header {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  width: 520px;
+  border-bottom: 1px solid black;
+}
+.table-header-col {
+  padding: 5px;
+  width: 130px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}

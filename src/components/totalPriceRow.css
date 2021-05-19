@@ -1,3 +1,5 @@
 .table-totalPrice {
-  order: 1;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 1.4rem;
 }
