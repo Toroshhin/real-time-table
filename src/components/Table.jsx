@@ -1,54 +1,17 @@
 import React from 'react'
-import './table.css'
-import { useDispatch } from 'react-redux'
-import editPrice from '../actions/editPrice'
-import editQuantity from '../actions/editQuantity'
-import PropTypes from 'prop-types'
+import './Table.css'
+import TableHeader from './TableHeader'
+import TableRow from './TableRow'
 import TotalPriceRow from './TotalPriceRow'
-
+import PropTypes from 'prop-types'
 export default function Table({ rows }) {
-  const dispatch = useDispatch()
-
   return (
-    <div className='table'>
-      <div className='table-head'>
-        <div className='cell-head'>Название</div>
-        <div className='cell-head'>Количество</div>
-        <div className='cell-head'>Цена за 1</div>
-        <div className='cell-head'>Цена (total)</div>
-      </div>
-
-      <div className='table-body'>
-        <div className='cell-body'>
-          {rows.map(row => (
-            <div className='cell'>{row.name}</div>
-          ))}
-        </div>
-
-        <div className='cell-body'>
-          {rows.map(row => (
-            <div className='cell' onClick={() => dispatch(editQuantity(row.id, prompt('Введите значение')))}>
-              {row.quantity}
-            </div>
-          ))}
-        </div>
-
-        <div className='cell-body'>
-          {rows.map(row => (
-            <div className='cell' onClick={() => dispatch(editPrice(row.id, prompt('Введите значение')))}>
-              {row.priceForOne}
-            </div>
-          ))}
-        </div>
-
-        <div className='cell-body'>
-          {rows.map(row => (
-            <div className='cell'>{row.priceForOne * row.quantity}</div>
-          ))}
-        </div>
-      </div>
-
-      <TotalPriceRow />
+    <div className="table">
+      <TableHeader />
+      {rows.map((row) => (
+        <TableRow key={row.id} data={row} />
+      ))}
+      <TotalPriceRow rows={rows} />
     </div>
   )
 }
